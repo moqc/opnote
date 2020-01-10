@@ -70,28 +70,40 @@ CervicalOpnoteView = Backbone.View.extend({
         that.$el.html(cervicalOpnoteTemplate);
 
         $('#dissection1').click(function() {
-            console.log("FULL");
 
+            //show the full node controls
             $("#fullNodesTitleDiv").attr('hidden', false);
             $("#fullNodesFormDiv").attr('hidden', false);
 
+            //hide the half node controls
             $("#leftNodesTitleDiv").attr('hidden', true);
             $("#leftNodesFormDiv").attr('hidden', true);
             $("#rightNodesTitleDiv").attr('hidden', true);
             $("#rightNodesFormDiv").attr('hidden', true);
 
+            //require these radio buttons
+            $("#fullNodes1").attr('required', true);
+            $("#fullNodes2").attr('required', true);
+            $("#fullNodes3").attr('required', true);
+
         });
 
         $('#dissection2').click(function() {
-            console.log("HALF");
 
+            //hide the full node controls
             $("#fullNodesTitleDiv").attr('hidden', true);
             $("#fullNodesFormDiv").attr('hidden', true);
 
+            //show the half node controls
             $("#leftNodesTitleDiv").attr('hidden', false);
             $("#leftNodesFormDiv").attr('hidden', false);
             $("#rightNodesTitleDiv").attr('hidden', false);
             $("#rightNodesFormDiv").attr('hidden', false);
+
+            //do not require since these are hidden
+            $("#fullNodes1").attr('required', false);
+            $("#fullNodes2").attr('required', false);
+            $("#fullNodes3").attr('required', false);
         });
 
     }
