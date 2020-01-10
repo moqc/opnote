@@ -97,6 +97,8 @@
 
     <script type="text/template" id="cervical-opnote-template">
 
+        <form class="was-validated">
+
         <div class="row sectionTitle">
             <div class="col-sm-1">
             </div>
@@ -131,85 +133,85 @@ The carcinoma has extended beyond the true pelvis or has involved (biopsy proven
             </div>
             <div class="col-sm-10">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIA1" value="stageIA1">
+                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIA1" value="stageIA1" required>
                     <label class="form-check-label" for="stageIA1">
                         Stage IA1: Invasive carcinoma that can be diagnosed only by microscopy, with maximum depth of invasion &lt;5 mm; Measured stromal invasion &lt;3 mm in depth
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIA2" value="stageIA2">
+                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIA2" value="stageIA2" required>
                     <label class="form-check-label" for="stageIA2">
                         Stage IA2: Invasive carcinoma that can be diagnosed only by microscopy, with maximum depth of invasion &lt;5 mm; Measured stromal invasion &ge;3 mm and &lt;5 mm in depth
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIB1" value="stageIB1">
+                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIB1" value="stageIB1" required>
                     <label class="form-check-label" for="stageIB1">
                         Stage IB1: Invasive carcinoma with measured deepest invasion &ge;5 mm (greater than stage IA), lesion limited to the cervix uteri; Invasive carcinoma &ge;5 mm depth of stromal invasion and &lt;2 cm in greatest dimension
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIB2" value="stageIB2">
+                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIB2" value="stageIB2" required>
                     <label class="form-check-label" for="stageIB2">
                         Stage IB2: Invasive carcinoma with measured deepest invasion &ge;5 mm (greater than stage IA), lesion limited to the cervix uteri; Invasive carcinoma &ge;2 cm and &lt;4 cm in greatest dimension
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIB3" value="stageIB3">
+                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIB3" value="stageIB3" required>
                     <label class="form-check-label" for="stageIB3">
                         Stage IB3: Invasive carcinoma with measured deepest invasion &ge;5 mm (greater than stage IA), lesion limited to the cervix uteri; Invasive carcinoma &ge;4 cm in greatest dimension
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIIA1" value="stageIIA1">
+                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIIA1" value="stageIIA1" required>
                     <label class="form-check-label" for="stageIIA1">
                         Stage IIA1: Involvement limited to the upper two-thirds of the vagina without parametrial involvement; Invasive carcinoma &lt;4 cm in greatest dimension
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIIA2" value="stageIIA2">
+                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIIA2" value="stageIIA2" required>
                     <label class="form-check-label" for="stageIIA2">
                         Stage IIA2: Involvement limited to the upper two-thirds of the vagina without parametrial involvement; Invasive carcinoma &ge;4 cm in greatest dimension
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIIB" value="stageIIB">
+                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIIB" value="stageIIB" required>
                     <label class="form-check-label" for="stageIIB">
                         Stage IIB: With parametrial involvement but not up to the pelvic wall
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIIIA" value="stageIIIA">
+                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIIIA" value="stageIIIA" required>
                     <label class="form-check-label" for="stageIIIA">
                         Stage IIIA: Carcinoma involves the lower third of the vagina, with no extension to the pelvic wall
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIIIB" value="stageIIIB">
+                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIIIB" value="stageIIIB" required>
                     <label class="form-check-label" for="stageIIIB">
                         Stage IIIB: Extension to the pelvic wall and/or hydronephrosis or non-functioning kidney (unless known to be due to another cause)
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIIIC" value="stageIIIC">
+                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIIIC" value="stageIIIC" required>
                     <label class="form-check-label" for="stageIIIC">
                         Stage IIIC1: Involvement of pelvic and/or paraaortic lymph nodes, irrespective of tumor size and extent (with r and p notations); Paraaortic lymph node metastasis
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIIIC2" value="stageIIIC2">
+                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIIIC2" value="stageIIIC2" required>
                     <label class="form-check-label" for="stageIIIC2">
                         Stage IIIC2: Involvement of pelvic and/or paraaortic lymph nodes, irrespective of tumor size and extent (with r and p notations); Pelvic lymph node metastasis only
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIVA" value="stageIVA">
+                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIVA" value="stageIVA" required>
                     <label class="form-check-label" for="stageIVA">
                         Stage IVA: Spread of the growth to adjacent organs
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIVB" value="stageIVB">
+                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIVB" value="stageIVB" required>
                     <label class="form-check-label" for="stagestageIVBIA1">
                         Stage IVB: Spread to distant organs
                     </label>
@@ -224,7 +226,7 @@ The carcinoma has extended beyond the true pelvis or has involved (biopsy proven
             <div class="col-sm-1">
             </div>
             <div class="col-sm-10">
-                <h4>Histiology</h4>
+                <h4>Histology</h4>
             </div>
             <div class="col-sm-1">
             </div>
@@ -235,31 +237,31 @@ The carcinoma has extended beyond the true pelvis or has involved (biopsy proven
             </div>
             <div class="col-sm-10">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="histologyRadios" id="histology0" value="Squamous Cell Cancer">
+                    <input class="form-check-input" type="radio" name="histologyRadios" id="histology0" value="Squamous Cell Cancer" required>
                     <label class="form-check-label" for="histology0">
                         Squamous Cell Cancer
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="histologyRadios" id="histology1" value="Adenocarcinoma">
+                    <input class="form-check-input" type="radio" name="histologyRadios" id="histology1" value="Adenocarcinoma" required>
                     <label class="form-check-label" for="histology1">
                         Adenocarcinoma
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="histologyRadios" id="histology2" value="Adenosquamous Carcinoma">
+                    <input class="form-check-input" type="radio" name="histologyRadios" id="histology2" value="Adenosquamous Carcinoma" required>
                     <label class="form-check-label" for="histology2">
                         Adenosquamous Carcinoma
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="histologyRadios" id="histology3" value="Small Cell Cancer">
+                    <input class="form-check-input" type="radio" name="histologyRadios" id="histology3" value="Small Cell Cancer" required> 
                     <label class="form-check-label" for="histology3">
                         Small Cell Cancer
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="histologyRadios" id="histology4" value="Other">
+                    <input class="form-check-input" type="radio" name="histologyRadios" id="histology4" value="Other" required>
                     <label class="form-check-label" for="histology4">
                         <input  type="text" name="histologyTextInput" id="histologyTextInput" placeholder="Other" />
                     </label>
@@ -286,19 +288,19 @@ The carcinoma has extended beyond the true pelvis or has involved (biopsy proven
             </div>
             <div class="col-sm-10">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gradeRadios" id="grade1" value="Grade 1">
+                    <input class="form-check-input" type="radio" name="gradeRadios" id="grade1" value="Grade 1" required>
                     <label class="form-check-label" for="grade1">
                         Grade 1
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gradeRadios" id="grade2" value="Grade 2">
+                    <input class="form-check-input" type="radio" name="gradeRadios" id="grade2" value="Grade 2" required>
                     <label class="form-check-label" for="grade2">
                         Grade 2
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gradeRadios" id="grade3" value="Grade 3">
+                    <input class="form-check-input" type="radio" name="gradeRadios" id="grade3" value="Grade 3" required>
                     <label class="form-check-label" for="grade3">
                         Grade 3
                     </label>
@@ -324,25 +326,25 @@ The carcinoma has extended beyond the true pelvis or has involved (biopsy proven
             </div>
             <div class="col-sm-10">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="modalityRadios" id="grade1" value="Open">
+                    <input class="form-check-input" type="radio" name="modalityRadios" id="modality1" value="Open" required>
                     <label class="form-check-label" for="modality1">
                         Open
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="modalityRadios" id="modality2" value="Laparascopic">
+                    <input class="form-check-input" type="radio" name="modalityRadios" id="modality2" value="Laparascopic" required>
                     <label class="form-check-label" for="modality2">
                         Laparascopic
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="modalityRadios" id="modality3" value="Robotic">
+                    <input class="form-check-input" type="radio" name="modalityRadios" id="modality3" value="Robotic" required>
                     <label class="form-check-label" for="modality3">
                         Robotic
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="modalityRadios" id="modality4" value="Vaginal">
+                    <input class="form-check-input" type="radio" name="modalityRadios" id="modality4" value="Vaginal" required>
                     <label class="form-check-label" for="modality4">
                         Vaginal
                     </label>
@@ -368,19 +370,19 @@ The carcinoma has extended beyond the true pelvis or has involved (biopsy proven
             </div>
             <div class="col-sm-10">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="ovariesRadios" id="ovaries1" value="Removed">
+                    <input class="form-check-input" type="radio" name="ovariesRadios" id="ovaries1" value="Removed" required>
                     <label class="form-check-label" for="ovaries1">
                         Removed
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="ovariesRadios" id="ovaries2" value="Not Removed">
+                    <input class="form-check-input" type="radio" name="ovariesRadios" id="ovaries2" value="Not Removed" required>
                     <label class="form-check-label" for="ovaries2">
                         Not Removed
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="ovariesRadios" id="ovaries3" value="One Removed">
+                    <input class="form-check-input" type="radio" name="ovariesRadios" id="ovaries3" value="One Removed" required>
                     <label class="form-check-label" for="ovaries3">
                         One Reomved
                     </label>
@@ -405,13 +407,13 @@ The carcinoma has extended beyond the true pelvis or has involved (biopsy proven
             </div>
             <div class="col-sm-10">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="transpositionRadios" id="transposition1" value="Done">
+                    <input class="form-check-input" type="radio" name="transpositionRadios" id="transposition1" value="Done" required>
                     <label class="form-check-label" for="transposition1">
                         Done
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="transpositionRadios" id="transposition2" value="Not Done">
+                    <input class="form-check-input" type="radio" name="transpositionRadios" id="transposition2" value="Not Done" required>
                     <label class="form-check-label" for="transposition2">
                         Not Done
                     </label>
@@ -436,13 +438,13 @@ The carcinoma has extended beyond the true pelvis or has involved (biopsy proven
             </div>
             <div class="col-sm-10">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="dissectionRadios" id="dissection1" value="Full Nodes (if sentinel lymph node dissection was attempted, choose SLND)">
+                    <input class="form-check-input" type="radio" name="dissectionRadios" id="dissection1" value="Full Nodes (if sentinel lymph node dissection was attempted, choose SLND)" required>
                     <label class="form-check-label" for="dissection1">
                         Full Nodes (if sentinel lymph node dissection was attempted, choose SLND)
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="dissectionRadios" id="dissection2" value="Sentinel (LND)">
+                    <input class="form-check-input" type="radio" name="dissectionRadios" id="dissection2" value="Sentinel (LND)" required>
                     <label class="form-check-label" for="dissection2">
                         Sentinel (LND)
                     </label>
@@ -632,11 +634,11 @@ The carcinoma has extended beyond the true pelvis or has involved (biopsy proven
 
         <div class="row footer" id="submitDiv">
             <div class="col-sm-12 text-center align-self-center">
-                <div class="button">
-                    <input type="button" class="btn btn-success" id="generateCervicalOpnoteButton" value="Generate Cervical Opnote">
-                </div>
+                <button class="btn btn-success" type="submit" id="generateCervicalOpnoteButton">Generate Cervical Opnote</button>
             </div>
         </div>
+
+        </form>
 
         <div class="row footer" id="footerDiv">
             <div class="col-sm-1">
