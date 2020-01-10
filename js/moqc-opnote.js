@@ -5,6 +5,14 @@ HomeOpnoteView = Backbone.View.extend({
     render: function() {
         var that = this;
 
+        //render header
+        var data = {
+            surgicalType: ""
+        };
+        var opnoteHeaderTemplate = _.template($('#opnote-header-template').html())(data);
+        $('#header').html(opnoteHeaderTemplate);
+
+        //render mainpage buttons
         var opnoteHomeTemplate = _.template($('#opnote-home-template').html())({});
         that.$el.html(opnoteHomeTemplate);
 
@@ -29,11 +37,15 @@ OvarianOpnoteView = Backbone.View.extend({
     render: function() {
         var that = this;
 
+        //render header
         var data = {
-
+            surgicalType: " - Ovarian Surgery"
         };
+        var opnoteHeaderTemplate = _.template($('#opnote-header-template').html())(data);
+        $('#header').html(opnoteHeaderTemplate);
     
-        var ovarianOpnoteTemplate = _.template($('#ovarian-opnote-template').html())(data);
+        //render mainpage form
+        var ovarianOpnoteTemplate = _.template($('#ovarian-opnote-template').html())({});
         that.$el.html(ovarianOpnoteTemplate);
 
     }
@@ -46,12 +58,41 @@ CervicalOpnoteView = Backbone.View.extend({
     render: function() {
         var that = this;
 
+        //render header
         var data = {
-
+            surgicalType: " - Cervical Surgery"
         };
-    
-        var cervicalOpnoteTemplate = _.template($('#cervical-opnote-template').html())(data);
+        var opnoteHeaderTemplate = _.template($('#opnote-header-template').html())(data);
+        $('#header').html(opnoteHeaderTemplate);
+
+        //render mainpage form
+        var cervicalOpnoteTemplate = _.template($('#cervical-opnote-template').html())({});
         that.$el.html(cervicalOpnoteTemplate);
+
+        $('#dissection1').click(function() {
+            console.log("FULL");
+
+            $("#fullNodesTitleDiv").attr('hidden', false);
+            $("#fullNodesFormDiv").attr('hidden', false);
+
+            $("#leftNodesTitleDiv").attr('hidden', true);
+            $("#leftNodesFormDiv").attr('hidden', true);
+            $("#rightNodesTitleDiv").attr('hidden', true);
+            $("#rightNodesFormDiv").attr('hidden', true);
+
+        });
+
+        $('#dissection2').click(function() {
+            console.log("HALF");
+
+            $("#fullNodesTitleDiv").attr('hidden', true);
+            $("#fullNodesFormDiv").attr('hidden', true);
+
+            $("#leftNodesTitleDiv").attr('hidden', false);
+            $("#leftNodesFormDiv").attr('hidden', false);
+            $("#rightNodesTitleDiv").attr('hidden', false);
+            $("#rightNodesFormDiv").attr('hidden', false);
+        });
 
     }
 });
@@ -62,12 +103,16 @@ EndometrialOpnoteView = Backbone.View.extend({
     el:'#mainpage',
     render: function() {
         var that = this;
-
+        
+        //render header
         var data = {
-
+            surgicalType: " - Endometrial Surgery"
         };
-    
-        var endometrialOpnoteTemplate = _.template($('#endometrial-opnote-template').html())(data);
+        var opnoteHeaderTemplate = _.template($('#opnote-header-template').html())(data);
+        $('#header').html(opnoteHeaderTemplate);
+
+        //render mainpage form
+        var endometrialOpnoteTemplate = _.template($('#endometrial-opnote-template').html())({});
         that.$el.html(endometrialOpnoteTemplate);
     }
 });

@@ -56,6 +56,14 @@
         </div>
     </div>
     
+    <script type="text/template" id="opnote-header-template">
+        <div class="row">
+            <div class="col-sm-12 title-white">
+                <h3 id="title">MOQC Operative Note Generator <%= surgicalType %></h3>
+            </div>
+        </div>
+    </script>
+
     <script type="text/template" id="opnote-home-template">
         <div class="row " id="home-buttons-desc">
             <div class="col-sm-12 text-center align-self-center">
@@ -65,7 +73,7 @@
         <div class="row">
             <div class="col-sm-12 text-center align-self-center">
                 <div class="button">
-                    <input type="button" class="btn btn-primary" id="ovarianOpnoteButton" value="Ovarian">
+                    <input disabled type="button" class="btn btn-primary" id="ovarianOpnoteButton" value="Ovarian">
                 </div>
             </div>
         </div>
@@ -90,7 +98,558 @@
     </script>
 
     <script type="text/template" id="cervical-opnote-template">
-        cervial opnote form
+
+        <div class="row sectionTitle">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10">
+                <h4>Stage</h4>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10 prewrap">
+Stage I:
+The carcinoma is strictly confined to the cervix uteri (extension to the corpus should be disregarded)
+
+Stage II:
+The carcinoma invades beyond the uterus, but has not extended onto the lower third of the vagina or to the pelvic wall
+
+Stage III:
+The carcinoma involves the lower third of the vagina and/or extends to the pelvic wall and/or causes hydronephrosis or non-functioning kidney and/or involves pelvic and/or paraaortic lymph nodes
+
+Stage IV:
+The carcinoma has extended beyond the true pelvis or has involved (biopsy proven) the mucosa of the bladder or rectum. A bullous edema, as such, does not permit a case to be allotted to stage IV
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIA1" value="stageIA1">
+                    <label class="form-check-label" for="stageIA1">
+                        Stage IA1: Invasive carcinoma that can be diagnosed only by microscopy, with maximum depth of invasion &lt;5 mm; Measured stromal invasion &lt;3 mm in depth
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIA2" value="stageIA2">
+                    <label class="form-check-label" for="stageIA2">
+                        Stage IA2: Invasive carcinoma that can be diagnosed only by microscopy, with maximum depth of invasion &lt;5 mm; Measured stromal invasion &ge;3 mm and &lt;5 mm in depth
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIB1" value="stageIB1">
+                    <label class="form-check-label" for="stageIB1">
+                        Stage IB1: Invasive carcinoma with measured deepest invasion &ge;5 mm (greater than stage IA), lesion limited to the cervix uteri; Invasive carcinoma &ge;5 mm depth of stromal invasion and &lt;2 cm in greatest dimension
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIB2" value="stageIB2">
+                    <label class="form-check-label" for="stageIB2">
+                        Stage IB2: Invasive carcinoma with measured deepest invasion &ge;5 mm (greater than stage IA), lesion limited to the cervix uteri; Invasive carcinoma &ge;2 cm and &lt;4 cm in greatest dimension
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIB3" value="stageIB3">
+                    <label class="form-check-label" for="stageIB3">
+                        Stage IB3: Invasive carcinoma with measured deepest invasion &ge;5 mm (greater than stage IA), lesion limited to the cervix uteri; Invasive carcinoma &ge;4 cm in greatest dimension
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIIA1" value="stageIIA1">
+                    <label class="form-check-label" for="stageIIA1">
+                        Stage IIA1: Involvement limited to the upper two-thirds of the vagina without parametrial involvement; Invasive carcinoma &lt;4 cm in greatest dimension
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIIA2" value="stageIIA2">
+                    <label class="form-check-label" for="stageIIA2">
+                        Stage IIA2: Involvement limited to the upper two-thirds of the vagina without parametrial involvement; Invasive carcinoma &ge;4 cm in greatest dimension
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIIB" value="stageIIB">
+                    <label class="form-check-label" for="stageIIB">
+                        Stage IIB: With parametrial involvement but not up to the pelvic wall
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIIIA" value="stageIIIA">
+                    <label class="form-check-label" for="stageIIIA">
+                        Stage IIIA: Carcinoma involves the lower third of the vagina, with no extension to the pelvic wall
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIIIB" value="stageIIIB">
+                    <label class="form-check-label" for="stageIIIB">
+                        Stage IIIB: Extension to the pelvic wall and/or hydronephrosis or non-functioning kidney (unless known to be due to another cause)
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIIIC" value="stageIIIC">
+                    <label class="form-check-label" for="stageIIIC">
+                        Stage IIIC1: Involvement of pelvic and/or paraaortic lymph nodes, irrespective of tumor size and extent (with r and p notations); Paraaortic lymph node metastasis
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIIIC2" value="stageIIIC2">
+                    <label class="form-check-label" for="stageIIIC2">
+                        Stage IIIC2: Involvement of pelvic and/or paraaortic lymph nodes, irrespective of tumor size and extent (with r and p notations); Pelvic lymph node metastasis only
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIVA" value="stageIVA">
+                    <label class="form-check-label" for="stageIVA">
+                        Stage IVA: Spread of the growth to adjacent organs
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="stageRadios" id="stageIVB" value="stageIVB">
+                    <label class="form-check-label" for="stagestageIVBIA1">
+                        Stage IVB: Spread to distant organs
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+
+
+        <div class="row sectionTitle">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10">
+                <h4>Histiology</h4>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="histologyRadios" id="histology0" value="Squamous Cell Cancer">
+                    <label class="form-check-label" for="histology0">
+                        Squamous Cell Cancer
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="histologyRadios" id="histology1" value="Adenocarcinoma">
+                    <label class="form-check-label" for="histology1">
+                        Adenocarcinoma
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="histologyRadios" id="histology2" value="Adenosquamous Carcinoma">
+                    <label class="form-check-label" for="histology2">
+                        Adenosquamous Carcinoma
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="histologyRadios" id="histology3" value="Small Cell Cancer">
+                    <label class="form-check-label" for="histology3">
+                        Small Cell Cancer
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="histologyRadios" id="histology4" value="Other">
+                    <label class="form-check-label" for="histology4">
+                        <input  type="text" name="histologyTextInput" id="histologyTextInput" placeholder="Other" />
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+
+
+
+        <div class="row sectionTitle">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10">
+                <h4>Grade</h4>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gradeRadios" id="grade1" value="Grade 1">
+                    <label class="form-check-label" for="grade1">
+                        Grade 1
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gradeRadios" id="grade2" value="Grade 2">
+                    <label class="form-check-label" for="grade2">
+                        Grade 2
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gradeRadios" id="grade3" value="Grade 3">
+                    <label class="form-check-label" for="grade3">
+                        Grade 3
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+
+
+        <div class="row sectionTitle">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10">
+                <h4>Modality</h4>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="modalityRadios" id="grade1" value="Open">
+                    <label class="form-check-label" for="modality1">
+                        Open
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="modalityRadios" id="modality2" value="Laparascopic">
+                    <label class="form-check-label" for="modality2">
+                        Laparascopic
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="modalityRadios" id="modality3" value="Robotic">
+                    <label class="form-check-label" for="modality3">
+                        Robotic
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="modalityRadios" id="modality4" value="Vaginal">
+                    <label class="form-check-label" for="modality4">
+                        Vaginal
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+
+
+        <div class="row sectionTitle">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10">
+                <h4>Ovaries</h4>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="ovariesRadios" id="ovaries1" value="Removed">
+                    <label class="form-check-label" for="ovaries1">
+                        Removed
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="ovariesRadios" id="ovaries2" value="Not Removed">
+                    <label class="form-check-label" for="ovaries2">
+                        Not Removed
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="ovariesRadios" id="ovaries3" value="One Removed">
+                    <label class="form-check-label" for="ovaries3">
+                        One Reomved
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+
+        <div class="row sectionTitle">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10">
+                <h4>Ovarian Transposition</h4>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="transpositionRadios" id="transposition1" value="Done">
+                    <label class="form-check-label" for="transposition1">
+                        Done
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="transpositionRadios" id="transposition2" value="Not Done">
+                    <label class="form-check-label" for="transposition2">
+                        Not Done
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+
+        <div class="row sectionTitle">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10">
+                <h4>Nodal Dissection</h4>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="dissectionRadios" id="dissection1" value="Full Nodes (if sentinel lymph node dissection was attempted, choose SLND)">
+                    <label class="form-check-label" for="dissection1">
+                        Full Nodes (if sentinel lymph node dissection was attempted, choose SLND)
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="dissectionRadios" id="dissection2" value="Sentinel (LND)">
+                    <label class="form-check-label" for="dissection2">
+                        Sentinel (LND)
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+
+
+
+        <div class="row sectionTitle" id="fullNodesTitleDiv" hidden>
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10">
+                <h4>Full Nodes</h4>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+
+        <div class="row" id="fullNodesFormDiv" hidden>
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="fullNodesRadios" id="fullNodes1" value="Pelvic">
+                    <label class="form-check-label" for="fullNodes1">
+                        Pelvic
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="fullNodesRadios" id="fullNodes2" value="Para-Aortic">
+                    <label class="form-check-label" for="fullNodes2">
+                        Para-Aortic
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="fullNodesRadios" id="fullNodes3" value="Both">
+                    <label class="form-check-label" for="fullNodes3">
+                        Both
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+
+
+
+
+        <div class="row sectionTitle" id="leftNodesTitleDiv" hidden>
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10">
+                <h4>Left - Site of Mapping (select all that apply)</h4>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+
+        <div class="row" id="leftNodesFormDiv" hidden>
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="leftNodesCheckboxes" id="leftNodes1" value="Common Iliac">
+                    <label class="form-check-label" for="leftNodes1">
+                        Common Iliac
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="leftNodesCheckboxes" id="leftNodes2" value="Internal Iliac">
+                    <label class="form-check-label" for="leftNodes2">
+                        Internal Iliac
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="leftNodesCheckboxes" id="leftNodes3" value="External Iliac">
+                    <label class="form-check-label" for="leftNodes3">
+                        External Iliac
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="leftNodesCheckboxes" id="leftNodes4" value="Obturator">
+                    <label class="form-check-label" for="leftNodes4">
+                        Obturator
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="leftNodesCheckboxes" id="leftNodes5" value="Para-Aortic">
+                    <label class="form-check-label" for="leftNodes5">
+                        Para-Aortic
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="leftNodesCheckboxes" id="leftNodes6" value="Presacral">
+                    <label class="form-check-label" for="leftNodes6">
+                        Presacral
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="leftNodesCheckboxes" id="leftNodes7" value="Did Not Map (Full LND Done)">
+                    <label class="form-check-label" for="leftNodes7">
+                        Did Not Map (Full LND Done)
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="leftNodesCheckboxes" id="leftNodes8" value="Did Not Map (No LND Done)">
+                    <label class="form-check-label" for="leftNodes8">
+                        Did Not Map (No LND Done)
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+
+
+        <div class="row sectionTitle" id="rightNodesTitleDiv" hidden>
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10">
+                <h4>Right - Site of Mapping (select all that apply)</h4>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+
+
+        <div class="row" id="rightNodesFormDiv" hidden>
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="rightNodesCheckboxes" id="rightNodes1" value="Common Iliac">
+                    <label class="form-check-label" for="rightNodes1">
+                        Common Iliac
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="rightNodesCheckboxes" id="rightNodes2" value="Internal Iliac">
+                    <label class="form-check-label" for="rightNodes2">
+                        Internal Iliac
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="rightNodesCheckboxes" id="rightNodes3" value="External Iliac">
+                    <label class="form-check-label" for="rightNodes3">
+                        External Iliac
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="rightNodesCheckboxes" id="rightNodes4" value="Obturator">
+                    <label class="form-check-label" for="rightNodes4">
+                        Obturator
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="rightNodesCheckboxes" id="rightNodes5" value="Para-Aortic">
+                    <label class="form-check-label" for="rightNodes5">
+                        Para-Aortic
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="rightNodesCheckboxes" id="rightNodes6" value="Presacral">
+                    <label class="form-check-label" for="rightNodes6">
+                        Presacral
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="rightNodesCheckboxes" id="rightNodes7" value="Did Not Map (Full LND Done)">
+                    <label class="form-check-label" for="rightNodes7">
+                        Did Not Map (Full LND Done)
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="rightNodesCheckboxes" id="rightNodes8" value="Did Not Map (No LND Done)">
+                    <label class="form-check-label" for="rightNodes8">
+                        Did Not Map (No LND Done)
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+
+        <div class="row footer" id="submitDiv">
+            <div class="col-sm-12 text-center align-self-center">
+                <div class="button">
+                    <input type="button" class="btn btn-success" id="generateCervicalOpnoteButton" value="Generate Cervical Opnote">
+                </div>
+            </div>
+        </div>
+
+        <div class="row footer" id="footerDiv">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10">
+                
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+
     </script>
 
     <script type="text/template" id="endometrial-opnote-template">
