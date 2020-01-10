@@ -43,12 +43,8 @@
         <div class="row">
 	        <div id="header" class="col-sm-12">
                 <div class="row">
-                    <div class="col-sm-4 title-white">
-                        <h3 id="title">MOQC Survey</h3>
-                    </div>
-                    <div class="col-sm-4">
-                    </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-12 title-white">
+                        <h3 id="title">MOQC Operative Note Generator</h3>
                     </div>
                 </div>
 	        </div>
@@ -60,12 +56,53 @@
         </div>
     </div>
     
-    <script type="text/template" id="survey-form-template">
-        the survey form
+    <script type="text/template" id="opnote-home-template">
+        <div class="row " id="home-buttons-desc">
+            <div class="col-sm-12 text-center align-self-center">
+                Select the type of operative note to generate:
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-center align-self-center">
+                <div class="button">
+                    <input type="button" class="btn btn-primary" id="ovarianOpnoteButton" value="Ovarian">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-center align-self-center">
+                <div class="button">
+                    <input type="button" class="btn btn-primary" id="cervicalOpnoteButton" value="Cervical">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-center align-self-center">
+                <div class="button">
+                    <input type="button" class="btn btn-primary" id="endometrialOpnoteButton" value="Endometrial">
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/template" id="ovarian-opnote-template">
+        ovarian opnote form
+    </script>
+
+    <script type="text/template" id="cervical-opnote-template">
+        cervial opnote form
+    </script>
+
+    <script type="text/template" id="endometrial-opnote-template">
+        endometrial opnote form
     </script>
     
   </body>
 
-  <!-- survey app -->
-  <script src="js/umhs-survey.js"></script>
+  <!-- opnote app -->
+  <script src="js/moqc-opnote.js"></script>
+
+  <!-- opnote app router -->
+  <script src="js/moqc-opnote-router.js"></script>
+
 </html>
