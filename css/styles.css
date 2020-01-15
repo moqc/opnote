@@ -106,7 +106,22 @@ div #footerDiv {
 }
 
 
+#generatedOpnote {
+    margin-top: 24px;
+    background-color: #EEEEEE;
+    display:none;
+}
 
+#copyToClipboardDiv {
+    display:none;
+}
+
+#copiedAlert {
+    display:none;
+    margin-bottom: 8px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
 
 
 .hiddenElement {
