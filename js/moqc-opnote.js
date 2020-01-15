@@ -138,6 +138,8 @@ CervicalOpnoteView = Backbone.View.extend({
 
             var opnote = generateOpnote(formData);
 
+            $('#copiedAlert').fadeOut(50);
+
             $('#generatedOpnote').html(opnote);
             $('#generatedOpnote').slideDown(500);
             $('#copyToClipboardDiv').slideDown(500);
@@ -186,6 +188,50 @@ var endometrialOpnoteView = new EndometrialOpnoteView();
 
 
 function generateOpnote(formData) {
+
+    //check for nodal dissection selection
+    var isFullNodalDissection = false;
+    for(var i = 0; i < formData.length; i++) {
+        if(formData[i].name == "Nodal_Dissection") {
+            if(formData[i].value.startsWith("Full")) {
+                isFullNodalDissection = true;
+            } else { 
+                //it's the sentinel (LND)
+            }
+            break;
+        }
+    }
+
+    // remove mult elements from array algo from here https://stackoverflow.com/a/9425230
+    if(isFullNodalDissection) {
+        //remove the left/right site mappings from the formData
+        var toRemove = [];
+        for(var i = 0; i < formData.length; i++) {
+            console.log(formData[i].name);
+            if(formData[i].name.startsWith("Left_") || formData[i].name.startsWith("Right_")) {
+                toRemove.push(i);
+            }
+        }
+
+        for (var i = toRemove.length -1; i >= 0; i--) {
+            formData.splice(toRemove[i],1);
+        }
+
+    } else {
+        //remove the full nodes from the formData
+        var toRemove = [];
+        for(var i = 0; i < formData.length; i++) {
+            console.log(formData[i].name);
+            if(formData[i].name.startsWith("Full_")) {
+                toRemove.push(i);
+            }
+        }
+
+        for (var i = toRemove.length -1; i >= 0; i--) {
+            formData.splice(toRemove[i],1);
+        }
+    }
+
 
     var generatedText = "";
 
