@@ -123,6 +123,10 @@ div #footerDiv {
     padding-bottom: 6px;
 }
 
+.infoIconCol {
+    padding-left: 0px;
+    margin-top: 2px;
+}
 
 .hiddenElement {
 	display:none;
