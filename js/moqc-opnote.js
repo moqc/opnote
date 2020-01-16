@@ -127,11 +127,6 @@ CervicalOpnoteView = Backbone.View.extend({
             e.preventDefault();
             var formId = this.id;  // "this" is a reference to the submitted form
 
-            // var formData = $('#opnoteForm').serializeArray().reduce(function(obj, item) {
-            //     obj[item.name] = item.value;
-            //     return obj;
-            // }, {});
-
             var formData = $('#opnoteForm').serializeArray();
 
             console.log(formData);
@@ -182,6 +177,97 @@ EndometrialOpnoteView = Backbone.View.extend({
         //render mainpage form
         var endometrialOpnoteTemplate = _.template($('#endometrial-opnote-template').html())({});
         that.$el.html(endometrialOpnoteTemplate);
+
+        
+        $('#dissection1').click(function() {
+
+            //show the full node controls
+            $("#fullNodesTitleDiv").attr('hidden', false);
+            $("#fullNodesFormDiv").attr('hidden', false);
+
+            //hide the half node controls
+            $("#leftNodesTitleDiv").attr('hidden', true);
+            $("#leftNodesFormDiv").attr('hidden', true);
+            $("#rightNodesTitleDiv").attr('hidden', true);
+            $("#rightNodesFormDiv").attr('hidden', true);
+
+            //require these radio buttons
+            $("#fullNodes1").attr('required', true);
+            $("#fullNodes2").attr('required', true);
+            $("#fullNodes3").attr('required', true);
+
+            //scroll
+            $("body,html").animate(
+                {
+                  scrollTop: $("#fullNodesTitleDiv").offset().top
+                },
+                500 //speed
+            );
+
+        });
+
+        $('#dissection2').click(function() {
+
+            //hide the full node controls
+            $("#fullNodesTitleDiv").attr('hidden', true);
+            $("#fullNodesFormDiv").attr('hidden', true);
+
+            //show the half node controls
+            $("#leftNodesTitleDiv").attr('hidden', false);
+            $("#leftNodesFormDiv").attr('hidden', false);
+            $("#rightNodesTitleDiv").attr('hidden', false);
+            $("#rightNodesFormDiv").attr('hidden', false);
+
+            //do not require since these are hidden
+            $("#fullNodes1").attr('required', false);
+            $("#fullNodes2").attr('required', false);
+            $("#fullNodes3").attr('required', false);
+            
+            //scroll
+            $("body,html").animate(
+                {
+                  scrollTop: $("#leftNodesTitleDiv").offset().top
+                },
+                500 //speed
+            );
+        });
+
+        
+        //on the form submit generate the opnote
+        $('#opnoteForm').submit(function (e) {
+            e.preventDefault();
+            var formId = this.id;  // "this" is a reference to the submitted form
+
+            var formData = $('#opnoteForm').serializeArray();
+
+            console.log(formData);
+
+            var opnote = generateOpnote(formData);
+
+            $('#copiedAlert').fadeOut(50);
+
+            $('#generatedOpnote').html(opnote);
+            $('#generatedOpnote').slideDown(500);
+            $('#copyToClipboardDiv').slideDown(500);
+            
+            $("body,html").animate(
+                {
+                  scrollTop: $("#generatedOpnoteDiv").offset().top
+                },
+                500 //speed
+            );
+
+            $('#copyToClipboardButton').click(function() {
+                copyToClipboard(opnote);
+                $('#copiedAlert').fadeIn(200);
+            });
+
+        });
+
+        $('#resetFormButton').click(function() {
+            router.navigate("endometrial");
+            window.location.reload();
+        });
     }
 });
 var endometrialOpnoteView = new EndometrialOpnoteView();
