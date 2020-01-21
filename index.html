@@ -65,32 +65,44 @@
     </script>
 
     <script type="text/template" id="opnote-home-template">
-        <div class="row " id="home-buttons-desc">
-            <div class="col-sm-12 text-center align-self-center">
-                Select the type of operative note to generate:
-            </div>
-        </div>
+
         <div class="row">
-            <div class="col-sm-12 text-center align-self-center">
-                <div class="button">
-                    <input type="button" class="btn btn-primary" id="ovarianOpnoteButton" value="Ovarian">
-                </div>
-            </div>
         </div>
+
         <div class="row">
-            <div class="col-sm-12 text-center align-self-center">
-                <div class="button">
-                    <input type="button" class="btn btn-primary" id="cervicalOpnoteButton" value="Cervical">
+            <ul id="opnoteList">
+
+                <div class="row opnoteListTitle">
+                    Select the type of Operative Note to generate:
                 </div>
-            </div>
+
+                <li class="ui-state-default opnote-list-item" id="ovarianOpnoteButton" value="Ovarian">
+                    <div class="row opnote-list-item">
+                        <div class="col-sm-12 text-center align-self-center" value="Ovarian">
+                            Ovarian
+                        </div>
+                    </div>
+                </li>
+
+                <li class="ui-state-default opnote-list-item" id="cervicalOpnoteButton" value="Cervical">
+                    <div class="row opnote-list-item">
+                        <div class="col-sm-12 text-center align-self-center" value="Cervical">
+                            Cervical
+                        </div>
+                    </div>
+                </li>
+
+                <li class="ui-state-default opnote-list-item" id="endometrialOpnoteButton" value="Endometrial">
+                    <div class="row opnote-list-item">
+                        <div class="col-sm-12 text-center align-self-center" value="Endometrial">
+                            Endometrial
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
-        <div class="row">
-            <div class="col-sm-12 text-center align-self-center">
-                <div class="button">
-                    <input type="button" class="btn btn-primary" id="endometrialOpnoteButton" value="Endometrial">
-                </div>
-            </div>
-        </div>
+
+
     </script>
 
 
