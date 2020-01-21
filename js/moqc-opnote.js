@@ -370,12 +370,8 @@ function generateOpnote(formData) {
         //special case for histology
         if(formData[i].name == "Histology" && formData[i].value == "Other") {
             useHistologyText = true;
-        } else if(formData[i].name == "Residual_Status" && formData[i].value == "Other") {
-            useResidualText = true;
         } else {
             if(formData[i].name == "histologyTextInput" && !useHistologyText) {
-                //do nothing
-            } else if(formData[i].name == "residualTextInput" && !useResidualText) {
                 //do nothing
             } else {
 
