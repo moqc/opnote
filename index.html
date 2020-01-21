@@ -73,7 +73,7 @@
         <div class="row">
             <div class="col-sm-12 text-center align-self-center">
                 <div class="button">
-                    <input disabled type="button" class="btn btn-primary" id="ovarianOpnoteButton" value="Ovarian">
+                    <input type="button" class="btn btn-primary" id="ovarianOpnoteButton" value="Ovarian">
                 </div>
             </div>
         </div>
@@ -93,9 +93,298 @@
         </div>
     </script>
 
+
     <script type="text/template" id="ovarian-opnote-template">
-        ovarian opnote form
+
+        <form class="was-validated" id="opnoteForm" style="width:100%">
+
+            <div class="row sectionTitle">
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-10">
+                    <h4>Debulking Status</h4>
+                </div>
+                <div class="col-sm-1">
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Debulking_Status" id="debulking0" value="Primary" required>
+                        <label class="form-check-label" for="debulking0">
+                            Primary
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Debulking_Status" id="debulking1" value="Internal" required>
+                        <label class="form-check-label" for="debulking1">
+                            Internal
+                        </label>
+                    </div>
+                </div>
+                <div class="col-sm-1">
+                </div>
+            </div>
+
+
+            <div class="row sectionTitle">
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-1">
+                    <h4>Stage</h4> 
+                </div>
+                <div class="col-sm-1 text-left infoIconCol" >
+                </div>
+                <div class="col-sm-8">
+                </div>
+                <div class="col-sm-1">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Stage" id="stageIA" value="stageIA" required>
+                        <label class="form-check-label" for="stageIA" title="Tumor limited to 1 ovary, capsule intact, no tumor on surface, negative washings.">
+                            Stage IA
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Stage" id="stageIB" value="stageIB" required>
+                        <label class="form-check-label" for="stageIB" title="Tumor involves both ovaries otherwise like IA.">
+                            Stage IB
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Stage" id="stageIC1" value="stageIC1" required>
+                        <label class="form-check-label" for="stageIC1" title="Tumor limited to 1 or both ovaries; Surgical spill.">
+                            Stage IC1
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Stage" id="stageIC2" value="stageIC2" required>
+                        <label class="form-check-label" for="stageIC2" title="Tumor limited to 1 or both ovaries; Capsule rupture before surgery or tumor on ovarian surface">
+                            Stage IC2
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Stage" id="stageIC3" value="stageIC3" required>
+                        <label class="form-check-label" for="stageIC3" title="Tumor limited to 1 or both ovaries; Malignant cells in the ascites or peritoneal washings.">
+                            Stage IC3
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Stage" id="stageIIA" value="stageIIA" required>
+                        <label class="form-check-label" for="stageIIA" title="Extension and/or implant on uterus and/or Fallopian tubes">
+                            Stage IIA
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Stage" id="stageIIB" value="stageIIB" required>
+                        <label class="form-check-label" for="stageIIB" title="Extension to other pelvic intraperitoneal tissues">
+                            Stage IIB
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Stage" id="stageIIIA1" value="stageIIIA1" required>
+                        <label class="form-check-label" for="stageIIIA1" title="Positive retroperitoneal lymph nodes only">
+                            Stage IIIA1
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Stage" id="stageIIIA1i" value="stageIIIA1i" required>
+                        <label class="form-check-label" for="stageIIIA1i" title="Positive retroperitoneal lymph nodes only; Metastasis &le;10 mm ">
+                            Stage IIIA1(i)
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Stage" id="stageIIIA1ii" value="stageIIIA1ii" required>
+                        <label class="form-check-label" for="stageIIIA1ii" title="Positive retroperitoneal lymph nodes only; Metastasis &gt;10 mm ">
+                            Stage IIIA1(ii)
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Stage" id="stageIIIA2" value="stageIIIA2" required>
+                        <label class="form-check-label" for="stageIIIA2" title="Microscopic, extrapelvic (above the brim) peritoneal involvement &plusmn; positive retroperitoneal lymph nodes">
+                            Stage IIIA2
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Stage" id="stageIIIB" value="stageIIIB" required>
+                        <label class="form-check-label" for="stageIIIB" title="Macroscopic, extrapelvic, peritoneal metastasis &le; 2 cm &plusmn; positive retroperitoneal lymph nodes. Includes extension to capsule of liver/spleen.">
+                            Stage IIIB
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Stage" id="stageIIIC" value="stageIIIC" required>
+                        <label class="form-check-label" for="stageIIIC" title="Macroscopic, extrapelvic, peritoneal metastasis &gt; 2 cm &plusmn; positive retroperitoneal lymph nodes. Includes extension to capsule of liver/spleen.">
+                            Stage IIIC
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Stage" id="stageIVA" value="stageIVA" required>
+                        <label class="form-check-label" for="stageIVA" title="Pleural effusion with positive cytology">
+                            Stage IVA
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Stage" id="stageIVB" value="stageIVB" required>
+                        <label class="form-check-label" for="stageIVB" title="Hepatic and/or splenic parenchymal metastasis, metastasis to extraabdominal organs (including inguinal lymph nodes and lymph nodes outside of the abdominal cavity)">
+                            Stage IVB
+                        </label>
+                    </div>
+                </div>
+                <div class="col-sm-1">
+                </div>
+            </div>
+
+
+            <div class="row sectionTitle">
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-10">
+                    <h4>Modality</h4>
+                </div>
+                <div class="col-sm-1">
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Modality" id="modality1" value="Open" required>
+                        <label class="form-check-label" for="modality1">
+                            Open
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Modality" id="modality2" value="Laparascopic" required>
+                        <label class="form-check-label" for="modality2">
+                            Laparascopic
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Modality" id="modality3" value="Robotic" required>
+                        <label class="form-check-label" for="modality3">
+                            Robotic
+                        </label>
+                    </div>
+                </div>
+                <div class="col-sm-1">
+                </div>
+            </div>
+
+
+            <div class="row sectionTitle">
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-10">
+                    <h4>Residual Status</h4>
+                </div>
+                <div class="col-sm-1">
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Residual_Status" id="residual1" value="No residual disease (R0 or no visible disease)" required>
+                        <label class="form-check-label" for="residual1">
+                            No residual disease (R0 or no visible disease)
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Residual_Status" id="residual2" value="Optimally debulked (1-5 mm largest visible disease)" required>
+                        <label class="form-check-label" for="residual2">
+                            Optimally debulked (1-5 mm largest visible disease)
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Residual_Status" id="residual3" value="Optimally debulked (6-10 mm visible disease)" required>
+                        <label class="form-check-label" for="residual3">
+                            Optimally debulked (6-10 mm visible disease)
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Residual_Status" id="residual4" value="Other" required>
+                        <label class="form-check-label wideLabel" for="residual4">
+                            Sub-optimally debulked (&gt;10 mm disease residual)
+                            <input type="text" name="residualTextInput" id="residualTextInput" placeholder="(specify size and location of residual disease)" />
+                        </label>
+                    </div>
+                </div>
+                <div class="col-sm-1">
+                </div>
+            </div>
+
+
+            <div class="row footer" id="submitDiv">
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-3 text-left align-self-top">
+                    <button class="btn btn-success" type="submit" id="generateOvarianOpnoteButton">Generate Ovarian Opnote</button>
+                </div>
+                <div class="col-sm-2 text-left align-self-center">
+                    <div class="button" id="copyToClipboardDiv">
+                        <input type="button" class="btn btn-outline-secondary" id="copyToClipboardButton" value="Copy To Clipboard">
+                    </div>
+                </div>
+                <div class="col-sm-2 text-left align-self-center">
+                    <div class="alert alert-secondary" role="alert" id="copiedAlert">
+                        Opnote Copied!
+                    </div>
+                </div>
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-2 text-center align-self-center">
+                    <div class="button">
+                        <input type="button" class="btn btn-outline-danger" id="resetFormButton" value="Reset Form">
+                    </div>
+                </div>
+                <div class="col-sm-1">
+                </div>
+            </div>
+            
+        </form>
+
+        <div class="row footer" id="generatedOpnoteDiv">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10" >
+                <pre id="generatedOpnote">
+
+                </pre>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+
+        <div class="row footer" id="footerDiv">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10">
+                
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+
     </script>
+
+
 
     <script type="text/template" id="cervical-opnote-template">
 
@@ -211,8 +500,8 @@ The carcinoma has extended beyond the true pelvis or has involved (biopsy proven
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="Stage" id="stageIIIC" value="stageIIIC" required>
-                    <label class="form-check-label" for="stageIIIC" title="Involvement of pelvic and/or paraaortic lymph nodes, irrespective of tumor size and extent (with r and p notations); Paraaortic lymph node metastasis">
+                    <input class="form-check-input" type="radio" name="Stage" id="stageIIIC1" value="stageIIIC1" required>
+                    <label class="form-check-label" for="stageIIIC1" title="Involvement of pelvic and/or paraaortic lymph nodes, irrespective of tumor size and extent (with r and p notations); Paraaortic lymph node metastasis">
                         Stage IIIC1
                     </label>
                 </div>

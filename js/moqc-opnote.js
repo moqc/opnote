@@ -48,6 +48,44 @@ OvarianOpnoteView = Backbone.View.extend({
         var ovarianOpnoteTemplate = _.template($('#ovarian-opnote-template').html())({});
         that.$el.html(ovarianOpnoteTemplate);
 
+
+        
+        //on the form submit generate the opnote
+        $('#opnoteForm').submit(function (e) {
+            e.preventDefault();
+            var formId = this.id;  // "this" is a reference to the submitted form
+
+            var formData = $('#opnoteForm').serializeArray();
+
+            console.log(formData);
+
+            var opnote = generateOpnote(formData);
+
+            $('#copiedAlert').fadeOut(50);
+
+            $('#generatedOpnote').html(opnote);
+            $('#generatedOpnote').slideDown(500);
+            $('#copyToClipboardDiv').slideDown(500);
+            
+            $("body,html").animate(
+                {
+                  scrollTop: $("#generatedOpnoteDiv").offset().top
+                },
+                500 //speed
+            );
+
+            $('#copyToClipboardButton').click(function() {
+                copyToClipboard(opnote);
+                $('#copiedAlert').fadeIn(200);
+            });
+
+        });
+
+        $('#resetFormButton').click(function() {
+            router.navigate("ovarian");
+            window.location.reload();
+        });
+
     }
 });
 var ovarianOpnoteView = new OvarianOpnoteView();
@@ -322,6 +360,7 @@ function generateOpnote(formData) {
     var generatedText = "";
 
     var useHistologyText = false;
+    var useResidualText = false;
 
     //collapse any same-named entries into the same value
     var entryMap = {};
@@ -331,9 +370,12 @@ function generateOpnote(formData) {
         //special case for histology
         if(formData[i].name == "Histology" && formData[i].value == "Other") {
             useHistologyText = true;
+        } else if(formData[i].name == "Residual_Status" && formData[i].value == "Other") {
+            useResidualText = true;
         } else {
-
             if(formData[i].name == "histologyTextInput" && !useHistologyText) {
+                //do nothing
+            } else if(formData[i].name == "residualTextInput" && !useResidualText) {
                 //do nothing
             } else {
 
@@ -358,6 +400,10 @@ function translateName(name) {
     //special case change the text input name
     if(name == "histologyTextInput") {
         return "Histology";
+    }
+
+    if(name == "residualTextInput") {
+        return "Residual Status";
     }
 
     //replace all the underscores with spaces

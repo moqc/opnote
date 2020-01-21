@@ -105,6 +105,14 @@ div #footerDiv {
     height: 72px;
 }
 
+div .wideLabel {
+    width: 100%;
+}
+
+#residualTextInput {
+    margin-left: 12px;
+    width: 60%;
+}
 
 #generatedOpnote {
     margin-top: 24px;
