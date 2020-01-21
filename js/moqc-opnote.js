@@ -48,7 +48,10 @@ OvarianOpnoteView = Backbone.View.extend({
         var ovarianOpnoteTemplate = _.template($('#ovarian-opnote-template').html())({});
         that.$el.html(ovarianOpnoteTemplate);
 
-
+        //init the complexity score checkboxes
+        for(var i = 1; i <= 12; i++) {
+            initComplexityCheckbox(i);
+        }
         
         //on the form submit generate the opnote
         $('#opnoteForm').submit(function (e) {
@@ -90,6 +93,29 @@ OvarianOpnoteView = Backbone.View.extend({
 });
 var ovarianOpnoteView = new OvarianOpnoteView();
 
+function initComplexityCheckbox(index) {
+    $('#complexity' + index).click(function() {
+        console.log($(this));
+
+        var score = $(this).data("score");
+
+        //change the score
+        if($(this).is(":checked")) {
+            $("#complexityValue" + index).text(score);
+        } else {
+            $("#complexityValue" + index).text(0);
+        }
+
+        //add up the scores
+        var total = 0;
+        for(var i = 1; i <= 12; i++) {
+            total += parseInt($("#complexityValue" + i).text());
+        }
+
+        //show the total score
+        $("#complexityTotal").text("Total Score: " + total);
+    });
+}
 
 CervicalOpnoteView = Backbone.View.extend({
     el:'#mainpage',
@@ -360,20 +386,45 @@ function generateOpnote(formData) {
     var generatedText = "";
 
     var useHistologyText = false;
-    var useResidualText = false;
 
     //collapse any same-named entries into the same value
     var entryMap = {};
-    var firstLine = true;
     for(var i = 0; i < formData.length; i++) {
 
         //special case for histology
         if(formData[i].name == "Histology" && formData[i].value == "Other") {
             useHistologyText = true;
         } else {
-            if(formData[i].name == "histologyTextInput" && !useHistologyText) {
+            if(formData[i].name == "histologyTextInput" && !useHistologyText) { //special case for histology "other" text input
+
                 //do nothing
-            } else {
+            } else if(formData[i].name == "Residual_Status") {  //special case for residual status extra text field
+
+                //if there are multiple entries with the same name, then put them under the same heading
+                if(!entryMap.hasOwnProperty(formData[i].name)) {
+                    generatedText += '\n' + translateName(formData[i].name) + ": " + formData[i].value;
+                    entryMap[formData[i].name] = "";
+                } else {
+                    generatedText += " " + formData[i].value;
+                }
+
+            } else if(formData[i].name == "Surgical_Complexity_Score") {  //special case for surgical complexity calculator
+                
+                if(!entryMap.hasOwnProperty(formData[i].name)) {
+
+                    //add up the scores
+                    var total = 0;
+                    for(var j = 1; j <= 12; j++) {
+                        total += parseInt($("#complexityValue" + j).text());
+                    }
+
+                    generatedText += '\n' + translateName(formData[i].name) + ": " + total + " \n - " + formData[i].value;
+                    entryMap[formData[i].name] = "";
+                } else {  
+                    generatedText += "\n - " + formData[i].value;
+                }
+
+            } else { //the general case
 
                 //if there are multiple entries with the same name, then put them under the same heading
                 if(!entryMap.hasOwnProperty(formData[i].name)) {
