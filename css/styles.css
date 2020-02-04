@@ -134,7 +134,10 @@ ul#opnoteList {
     padding-left: 0px;
 }
 
-
+.warningParagraph {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
 
 .sectionTitle {
     margin-top: 16px;

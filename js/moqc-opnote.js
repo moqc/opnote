@@ -62,6 +62,8 @@ OvarianOpnoteView = Backbone.View.extend({
 
             console.log(formData);
 
+            showWarning();
+
             var opnote = generateOpnote(formData);
 
             $('#copiedAlert').fadeOut(50);
@@ -195,6 +197,8 @@ CervicalOpnoteView = Backbone.View.extend({
 
             console.log(formData);
 
+            showWarning();
+
             var opnote = generateOpnote(formData);
 
             $('#copiedAlert').fadeOut(50);
@@ -306,6 +310,9 @@ EndometrialOpnoteView = Backbone.View.extend({
 
             console.log(formData);
 
+            //show the warning
+            showWarning();
+
             var opnote = generateOpnote(formData);
 
             $('#copiedAlert').fadeOut(50);
@@ -336,6 +343,19 @@ EndometrialOpnoteView = Backbone.View.extend({
 });
 var endometrialOpnoteView = new EndometrialOpnoteView();
 
+function showWarning() {
+    bootbox.alert({
+        message: function() {
+            return _.template($('#opnote-warning-template').html())({});
+        },
+        // centerVertical: true,
+        closeButton: false,
+        backdrop: true,
+        onEscape: function() {
+            return true;
+        }
+    }).find("div.modal-dialog").addClass("modal-xl");
+}
 
 function generateOpnote(formData) {
 
