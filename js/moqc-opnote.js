@@ -344,15 +344,30 @@ EndometrialOpnoteView = Backbone.View.extend({
 var endometrialOpnoteView = new EndometrialOpnoteView();
 
 function showWarning() {
-    bootbox.alert({
+
+    bootbox.dialog({
         message: function() {
             return _.template($('#opnote-warning-template').html())({});
         },
-        // centerVertical: true,
-        closeButton: false,
         backdrop: true,
         onEscape: function() {
             return true;
+        },
+        buttons: {
+            ok: {
+                label: 'I Agree',
+                className: 'btn-primary',
+                callback: function(){
+                                    
+                }
+            },
+            cancel: {
+                label: 'I Disagree',
+                className: 'btn-error',
+                callback: function(){
+                    window.location.replace("https://moqc.org/initiatives/gyn-onc/");
+                }
+            },
         }
     }).find("div.modal-dialog").addClass("modal-xl");
 }
