@@ -350,6 +350,7 @@ function showWarning() {
             return _.template($('#opnote-warning-template').html())({});
         },
         backdrop: true,
+        closeButton: false,
         onEscape: function() {
             return true;
         },
